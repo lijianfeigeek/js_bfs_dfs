@@ -1,12 +1,12 @@
 <div id='root'>
     <span>123
         <a href="#">
-            sdsd
+            a标签
         </a>
-        <div>sdsd<a>这是一个a标签</a></div>
+        <div>div标签<a>a标签</a></div>
     </span>
-    <span>456
-        <p>这是一个p标签</p>
+    <span>span标签
+        <p>p标签</p>
     </span>
 </div>
 
@@ -17,6 +17,8 @@
 <!--  span       span -->
 <!--  /   \      /      -->
 <!-- a     div  p        -->
+<!--         \             -->
+<!--          a             -->
 
 <script>
 // 深度优先
@@ -40,6 +42,7 @@ function deepTraversal(node,nodeList) {
             deepTraversal(children[i],nodeList);    
     }    
     return nodeList;  // 返回所有数组
+    // div -> span -> a -> div -> a -> span -> p
 }  
 var root = document.getElementById('root')
 console.log(`深度优先：`)
@@ -68,6 +71,7 @@ function wideTraversal(node) {
         }  
     }  
     return nodes;  
+    // div -> span -> span -> a -> div -> p -> a
 }
 var root = document.getElementById('root');
 console.log(`广度优先：`)
